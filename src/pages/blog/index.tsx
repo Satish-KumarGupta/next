@@ -11,7 +11,7 @@ const index = () => {
         <meta name='keywords' content='next,blog,coder blog'/>
         {/* <script src='/sc.js'></script> */}
     </Head>
-    <Script src='/sc.js' strategy='lazyOnload'></Script>
+    {/* <Script src='/sc.js' strategy='lazyOnload'></Script> */}
         index
     </div>
   )
