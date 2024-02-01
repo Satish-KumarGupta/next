@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "../../node_modules/next/link";
 
 const Blog = () => {
+  useEffect(()=>{
+    
+  },[])
   return (
     <div className="max-w-4xl items-center m-auto">
       <h2>Blog posts</h2>
