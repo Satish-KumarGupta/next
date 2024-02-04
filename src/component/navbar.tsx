@@ -1,10 +1,12 @@
 import React from "react";
 import Link from "../../node_modules/next/link";
+import navStyle from '../styles/navStyle.module.css'
 const Navbar = () => {
   return (
-    <>
-      <nav className="flex   flex-row">
-        <ul className="flex w-full justify-between p-3 m-3   bg-gray-200">
+    <div >
+      
+      <nav className={navStyle.body}>
+        <ul className={navStyle.head}>
             <li>
           <Link href={"/"}>
               Home
@@ -13,7 +15,7 @@ const Navbar = () => {
           <Link href={"/contact"}>
             <li>Contact</li>
           </Link>
-          <Link href={"/blog"}>
+          <Link href={"/blogpost"}>
             <li>blog</li>
           </Link>
 
@@ -22,7 +24,7 @@ const Navbar = () => {
           </Link>
         </ul>
       </nav>
-    </>
+    </div>
   );
 };
 
