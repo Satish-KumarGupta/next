@@ -3,7 +3,10 @@ import * as fs from 'fs';
 
 
 export default async function handler(req:NextApiRequest,res:NextApiResponse){
+    console.log(req.query.count);
+    
     let data=await fs.promises.readdir("blogPostData");
+    data=data.slice(0,parseInt(req.query.count))
     let myfile;
     let allblog:any[]=[];
 
