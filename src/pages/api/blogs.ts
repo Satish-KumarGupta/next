@@ -31,10 +31,13 @@
 
 // }
 
-
 import type { NextApiRequest, NextApiResponse } from "next";
 import * as fs from 'fs';
 import path from 'path';
+
+interface ErrorResponse {
+    error: string;
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
@@ -71,13 +74,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         // If no blogs are found, return a 404 error
         if (allblog.length === 0) {
-            return res.status(404).json({ error: "No blogs found" });
+            return res.status(404).json({ error: "No blogs found" } as ErrorResponse); // Type assertion here
         }
 
         // Send response with collected blog data
         res.status(200).json(allblog);
     } catch (error) {
         console.error("Error:", error);
-        res.status(500).json({ error: "Internal Server Error" });
+        res.status(500).json({ error: "Internal Server Error" } as ErrorResponse); // Type assertion here
     }
 }
