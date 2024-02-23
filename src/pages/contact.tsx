@@ -38,10 +38,10 @@ const Contact = () => {
     }
 
   return (
-    <div className='flex flex-col justify-center items-center py-4'>
+    <div className=' flex flex-col justify-center items-center py-4'>
         <h1 className='p-4'>Contact Us</h1>
-        <form onSubmit={(e)=>handleSubmit(e)}>
-            <div className='mb-3 flex flex-col rounded'>  
+        <form onSubmit={(e)=>handleSubmit(e)} className="sm:w-1/5 w-full p-2 sm:p-0">
+            <div className='mb-3 w-full flex flex-col rounded'>  
                 <label >Enter your name</label>
                 <hr />
                 <input type={"text"} id="name" name='name' value={data.name} className='border' onChange={handleChange} />
@@ -60,9 +60,9 @@ const Contact = () => {
             </div>
             <div  className='mb-3 flex flex-col rounded'>  
                 <label >Enter your message</label>
-                <textarea  id="message" name='message' value={data.message} className='border' onChange={handleChange}/>
+                <textarea  id="message" name='message' value={data.message} className='border' rows={3} onChange={handleChange}/>
             </div>
-            <button type='submit'>Save</button>
+            <button type='submit' className='bg-red-300 p-2 rounded hover:bg-red-500'>Save</button>
         </form>
 
     </div>

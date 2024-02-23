@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "../../../node_modules/next/router";
-
+import * as fs from 'fs';
 interface blogtype {
     title: string;
     content: string;
@@ -21,6 +21,19 @@ const Post=(props:blogtype)=>{
         </div>
     )
 }
+
+// export async function getStaticPaths(){
+//   let allb=await fs.promises.readdir('blogPostData')
+//   allb=allb.map((item)=> {
+//     return { params:{slug: item.split(".")[0]} }
+//   })
+//   console.log(allb);
+//   return{
+//     paths:allb,
+//     fallback:true
+//   };
+// }
+
 export async function getServerSideProps(context:any){
    
     const {slug}=context.query;
